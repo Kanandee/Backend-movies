@@ -20,4 +20,21 @@ UserController.getAll = async (req, res) => {
    }
 };
 
+UserController.getInfo = async (req, res) => {
+   try {
+      const user = await User.findOne({ email: req.params.email});
+      return res.status(200).json({
+         success: true,
+         message: "Get user info retrieved succsessfully",
+         results: user,
+      });
+   } catch (error) {
+      return res.status(500).json({
+         success: false,
+         message: "Error retrieving users",
+         error: error.message,
+      });
+   }
+};
+
 export default UserController;

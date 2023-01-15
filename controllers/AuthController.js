@@ -54,9 +54,9 @@ AuthController.login = async (req, res) => {
             message: "Email and password are required",
          });
       }
-
+      
+      console.log(req.body)
       const user = await User.findOne({ email: email });
-
       const isValidPassword = compareSync(password, user.password);
 
       if (!isValidPassword) {

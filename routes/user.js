@@ -6,7 +6,8 @@ import isSuperAdmin from "../middelwares/isSuperAdmin.js";
 import verifyToken from "../middelwares/verifyToken.js";
 
 /* GET users listing. */
-router.get("/", verifyToken, isSuperAdmin, UserController.getAll);
-//router.get("/", UserController.getAll);
+//router.get("/", verifyToken, isSuperAdmin, UserController.getAll);
+router.get("/", UserController.getAll);
+router.get("/:email", UserController.getInfo);
 
 export default router;
