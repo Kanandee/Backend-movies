@@ -77,6 +77,7 @@ AuthController.login = async (req, res) => {
          message: "User Logged",
          role: user.role,
          token: token,
+         user: user
       });
    } catch (error) {
       return res.status(500).json({
