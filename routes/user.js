@@ -9,6 +9,8 @@ import verifyToken from "../middelwares/verifyToken.js";
 
 /* GET users listing. */
 router.get("/", verifyToken, isSuperAdmin, UserController.getAll);
-router.get("/:email", verifyToken, isUser, UserController.getInfo);
-
+router.get("/:id", verifyToken, UserController.getInfo);
+router.get("/:id/rent/:movie", UserController.rentMovie);
+router.post("/:id/rent", UserController.rentAllMovie);
+router.get("/:id/delete/:movie", verifyToken, UserController.deleteMovie);
 export default router;
