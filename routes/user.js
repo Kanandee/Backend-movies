@@ -13,4 +13,5 @@ router.get("/:id", verifyToken, UserController.getInfo);
 router.get("/:id/rent/:movie", UserController.rentMovie);
 router.post("/:id/rent", UserController.rentAllMovie);
 router.get("/:id/delete/:movie", verifyToken, UserController.deleteMovie);
+router.get("/:id/delete", verifyToken,isSuperAdmin, UserController.deleteUser);
 export default router;

@@ -20,6 +20,25 @@ UserController.getAll = async (req, res) => {
    }
 };
 
+UserController.deleteUser = async (req, res) => {
+   try {
+      const user = await User.deleteOne({_id: req.params.id});
+
+      return res.status(200).json({
+         success: true,
+         message: "delete succsessfully",
+         results: users,
+      });
+   } catch (error) {
+      return res.status(500).json({
+         success: false,
+         message: "Error delete users",
+         error: error.message,
+      });
+   }
+};
+
+
 UserController.getInfo = async (req, res) => {
    try {
       const user = await User.findOne({ _id: req.params.id});
