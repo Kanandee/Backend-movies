@@ -20,6 +20,12 @@ $ git clone https://github.com/Kanandee/Backend-movies.git
 npm install
 ```
 
+<h3>Para arrancar el servidor:</h3>
+
+```
+npm run dev
+```
+
 ## End Points
 ### Index
 
